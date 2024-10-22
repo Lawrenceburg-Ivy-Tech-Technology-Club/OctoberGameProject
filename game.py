@@ -7,6 +7,7 @@ class GameData:
         self.score = 0
         self.current_prompt = init_prompt
         self.message = ""
+        self.counter = 0
 
     def is_running(self):
         return self.running
@@ -16,6 +17,8 @@ class GameData:
         return self.current_prompt
     def get_message(self):
         return self.message
+    def get_counter(self):
+        return self.counter
     
     def set_running(self, running: bool):
         self.running = running
@@ -25,6 +28,8 @@ class GameData:
         self.current_prompt = current_prompt
     def set_message(self, message: str):
         self.message = message
+    def set_counter(self, counter):
+        self.counter = counter
 
 class Game:
     def __init__(self, init_prompt: Prompt):
