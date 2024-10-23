@@ -1,29 +1,22 @@
 from game import GameData, Game
 from choice import Choice
 from prompt import Prompt
+import parser
 
-def load_json():
-    questions = {
-        "questions": {
-            0 : {
-                "q": ["One", "Two"],
-                "a": [0]
-            },
-            1 : {
-                "q": ["Three", "Four"],
-                "a": [1]
-            },
-        }
-    }
-    return questions
-    
-questions = load_json()
-counter = 0
+try:
+  prompt_data = parser.load_prompt('1')
+except FileNotFoundError:
+  raise FileNotFoundError("Prompt file not found.")
+except Exception as e:
+  raise Exception(f"An error occured while loading the prompt: {e}")
+
+
 
 def nav_score_editor_callback(data: GameData):
     data.set_current_prompt(score_editor_prompt)
 
-nav_score_editor_choice = Choice("Score Editor", nav_score_editor_callback)
+for c in range(len(prompt_data["choices"])):
+    nav_score_editor_choice = Choice(prompt_data["choices"][c]["alias"], nav_score_editor_callback)
 
 def quit_callback(data: GameData):
     data.set_running(False)
@@ -36,20 +29,22 @@ def increment_score_callback(data: GameData):
     data.score += 1
 
 
-increment_score_choice = Choice(questions["questions"][counter]["q"][0], increment_score_callback())
+#increment_score_choice = Choice(questions["questions"][counter]["q"][0], increment_score_callback())
+increment_score_choice = Choice("Yes", increment_score_callback)
 
 def decrement_score_callback(data: GameData):
     data.score -= 1
 
 
-decrement_score_choice = Choice(questions["questions"][counter]["q"][1], decrement_score_callback())
+#decrement_score_choice = Choice(questions["questions"][counter]["q"][1], decrement_score_callback())
+decrement_score_choice = Choice("No", decrement_score_callback)
 
 def nav_main_menu_callback(data: GameData):
     data.set_current_prompt(main_menu_prompt)
 
 nav_main_menu_choice = Choice("Main Menu", nav_main_menu_callback)
 
-score_editor_prompt = Prompt("Score Editor", "Use the choices below to modify the score.", [increment_score_choice, decrement_score_choice, nav_main_menu_choice])
+score_editor_prompt = Prompt("Score Editor", "is this a phishing email?", [increment_score_choice, decrement_score_choice, nav_main_menu_choice])
 
 def main():
     global ngame

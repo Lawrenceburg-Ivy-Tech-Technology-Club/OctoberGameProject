@@ -1,0 +1,117 @@
+{
+    "prompts": {
+        "0": {
+            "title": "Main Menu",
+            "content": "",
+            "choices": [
+                {
+                    "alias": "Score Editor",
+                    "score": 0,
+                    "next": "1"
+                }
+            ]
+        },
+        "1": {
+            "title": "Prompt 1",
+            "content": "You email back Marina, the IT Manager, that you think the top priority should be to run a penetration test. She responds back and provides you with a Virtual Machine with a simulated version of their network. Taking inspiration from your boss, you roll up your sleeves, take a sip of your coffee, and get to work. ",
+            "choices": [
+                {
+                    "alias": "Run a network scan",
+                    "score": 0,
+                    "next": "2",
+                    "isCorrect": true
+                },
+                {
+                    "alias": "Search for weak passwords",
+                    "score": -1,
+                    "next": "3"
+                },
+                {
+                    "alias": "Search for devices with outdated software or software vulnerabilities ",
+                    "score": -1,
+                    "next": "4"
+                },
+                {
+                    "alias": "Main Menu",
+                    "score": 0,
+                    "next": "0"
+                }
+            ]
+        },
+        "2": {
+            "title": "Prompt 2",
+            "content": "The first step that you take is to run a network scan, searching for any open ports. The scan is complete and you find open ports. Port 80 (Http) and Port 3389 (RDP, Remote Desktop Protocol) are open. You know that Port 80 is likely open to host a web application and Port 3389 is likely open because the IT department uses RDP to manage and troubleshoot company devices",
+            "choices": [
+                {
+                    "alias": "Implement forward proxy",
+                    "score": 0,
+                    "next": "0"
+                },
+                {
+                    "alias": "Implement reverse proxy",
+                    "score": -1,
+                    "next": "0"
+                },
+                {
+                    "alias": "Keep the ports open",
+                    "score": -1,
+                    "next": "0"
+                },
+                {
+                    "alias": "Main Menu",
+                    "score": 0,
+                    "next": "0"
+                }
+            ]
+        },
+        "3": {
+            "title": "Prompt 3",
+            "content": "The second step that you take is to search for any weak passwords. You perform a Brute Force Attack on the network to check for any weak passwords. {Success}. You find the password for one of the administrator accounts is qwerty123",
+            "choices": [
+                {
+                    "alias": "Set the password to match the username",
+                    "score": 0,
+                    "next": "0",
+                    "isCorrect": true
+                },
+                {
+                    "alias": "Set a minimum password character limit and require special characters.",
+                    "score": -1,
+                    "next": "0"
+                },
+                {
+                    "alias": "Main Menu",
+                    "score": 0,
+                    "next": "0"
+                }
+            ]
+        },
+        "4": {
+            "title": "Prompt 4",
+            "content": "The third step that you take is to search for any devices with outdated software or software vulnerabilities. During your search you find that several of the accounting computers are running an outdated version of Microsoft Office. Because the software is no longer supported, it is vulnerable to many different known exploits. To go one step further you attempt one of the exploits targeting the machines with the outdated Microsoft Office software. The exploit works and you now have root access to the machine. ",
+            "choices": [
+                {
+                    "alias": "Update to the latest version of Microsoft Office",
+                    "score": 0,
+                    "next": "0",
+                    "isCorrect": true
+                },
+                {
+                    "alias": "Document how you implemented the solution",
+                    "score": -1,
+                    "next": "0"
+                },
+                {
+                    "alias": "Notify system administrators",
+                    "score": -1,
+                    "next": "0"
+                },
+                {
+                    "alias": "Main Menu",
+                    "score": 0,
+                    "next": "0"
+                }
+            ]
+        }
+    }
+}
