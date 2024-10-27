@@ -13,7 +13,7 @@
         },
         "1": {
             "title": "Prompt 1",
-            "content": "You email back Marina, the IT Manager, that you think the top priority should be to run a penetration test. She responds back and provides you with a Virtual Machine with a simulated version of their network. Taking inspiration from your boss, you roll up your sleeves, take a sip of your coffee, and get to work. ",
+            "content": " You email back Marina, the IT Manager, that you think the top priority should be to run a penetration test.\n She responds back and provides you with a Virtual Machine with a simulated version of their network. Taking inspiration\n from your boss, you roll up your sleeves, take a sip of your coffee, and get to work. ",
             "choices": [
                 {
                     "alias": "Run a network scan",
@@ -33,6 +33,16 @@
                 },
                 {
                     "alias": "Main Menu",
+                    "score": 0,
+                    "next": "0"
+                },
+                {
+                    "alias": "Score Editor",
+                    "score": 0,
+                    "next": "1"
+                },
+                {
+                    "alias": "Quit",
                     "score": 0,
                     "next": "0"
                 }
@@ -61,6 +71,16 @@
                     "alias": "Main Menu",
                     "score": 0,
                     "next": "0"
+                },
+                {
+                    "alias": "Score Editor",
+                    "score": 0,
+                    "next": "1"
+                },
+                {
+                    "alias": "Quit",
+                    "score": 0,
+                    "next": "0"
                 }
             ]
         },
@@ -81,6 +101,16 @@
                 },
                 {
                     "alias": "Main Menu",
+                    "score": 0,
+                    "next": "0"
+                },
+                {
+                    "alias": "Score Editor",
+                    "score": 0,
+                    "next": "1"
+                },
+                {
+                    "alias": "Quit",
                     "score": 0,
                     "next": "0"
                 }
@@ -108,6 +138,16 @@
                 },
                 {
                     "alias": "Main Menu",
+                    "score": 0,
+                    "next": "0"
+                },
+                {
+                    "alias": "Score Editor",
+                    "score": 0,
+                    "next": "1"
+                },
+                {
+                    "alias": "Quit",
                     "score": 0,
                     "next": "0"
                 }
