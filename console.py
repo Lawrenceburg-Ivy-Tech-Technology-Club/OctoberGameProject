@@ -15,6 +15,6 @@ def print_prompt(prompt: Prompt):
     print(f"{prompt.get_content()}\n")
     i = 1
     for choice in prompt.get_choices():
-        print(f"[{i}] {choice.alias}")
+        print(f"[{i}] {choice.get_alias()}")
         i += 1
     print("")
